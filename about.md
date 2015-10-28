@@ -4,12 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I am a research analyst in the institutional research department at Queensborough Community College as well as a grad student in the data analytics program at Queens College. 
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[pmwynne1@gmail.com](mailto:pmwynne1@gmail.com)
