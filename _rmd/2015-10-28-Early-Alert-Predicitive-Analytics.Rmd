@@ -162,7 +162,7 @@ importance_matrix <- xgb.importance(feature.names, model = bst)
 
 importance_matrixR1 <- importance_matrix[1:10, ]
 
-xgb.plot.importance(importance_matrixR1) +theme(text = element_text(size=20)) +
+xgb.plot.importance(importance_matrixR1) + theme(text = element_text(size=20)) +
         theme(axis.text.y=element_text(colour="black"))
 
 
@@ -186,9 +186,7 @@ auc(testing$Probation, testing$ProbationLogitnoeas)
 ```
 
 
-
 ```{r, echo=FALSE, results='asis'}
-stargazer(ModelFTFNoEas, ModelFTF, type = "html")
 
 plot(perflogit, main="Academic Probation Model Performance", col = "#E69F00", lwd = 3.5)
 lines(unlist(perflogitNoEAS@x.values), unlist(perflogitNoEAS@y.values), col = "#66CC99", lwd = 3.5)
@@ -197,3 +195,4 @@ abline(a=0, b=1, lwd = 3.5, col="#999999")
 legend(x=.4,y=.3, c("Boosted Trees (AUC=.783)", "Logistic (AUC=.760)", "Without EAS (AUC=.608)", "Random (AUC=.5)"),
        lwd=c(3.5,3.5,3.5,3.5),col=c("#5E5EA2", "#E69F00", "#66CC99", "#999999"))
 ```
+
