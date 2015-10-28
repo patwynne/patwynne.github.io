@@ -8,7 +8,7 @@ draft: false
 tags: R Jekyll RStudio
 ---
 
-In the first post of this new blog I'll outline how I've set the blog up. 
+In the first post of this new blog I'll outline how I've set the blog up.  
 
 * writing posts in `Rmarkdown`
 * converting posts to markdown from R
