@@ -1,0 +1,199 @@
+---
+title: "Predictin Academic Probation"
+author: "Patrick Wynne"
+published: false
+status: process
+draft: false
+tags: R Persistence
+---
+
+
+
+```{r, message=FALSE, results='hide', echo=FALSE}
+setwd("C:\\Users\\PWynne\\Desktop\\Starfish Fall 15\\AtRisk")
+
+library(Zelig)
+library(stargazer)
+library(foreign)
+library(dplyr)
+library(tidyr)
+library(RColorBrewer)
+library(pROC)
+library(caret)
+library(ROCR)
+library(xgboost)
+library(ggplot2)
+
+Starfish <- read.csv("ImportedRData\\StarfishDataAllVariablesR1.csv", header = TRUE)
+
+
+
+names(Starfish)
+
+table(Starfish$Term.Enrolled.Date)
+
+Fall13.NWD <- function(x){
+        Fall13 <- Starfish%>%
+                filter(New.Student.Desc == x & 
+                               Term.Enrolled.Date == "01-SEP-2013" &
+                               Full.Part.Time.Desc == "FULL-TIME")%>%
+                mutate(Probation = ifelse(GPA.Semester.Perf > 2,1,0))%>%
+                select(., New.Student.Desc, "TimeStatus" = Full.Part.Time.Desc, Age, 
+                       "Gender" = Gender.Desc,
+                       "Ethnicity" = Ethnicity.Imputed.Group.1.Desc, 
+                       "EcoDisadvantage" = Economic.Disadvantage.Flag, 
+                       "LimitedEnglish" = Limited.English.Flag, 
+                       "Major" = College.Program.Code,
+                       "Credits Enrolled" = Credits.Hours.Semester.Undergraduate.Level.Courses.Show.SUM,
+                       "Remedial Math" = Initial.Math.All.Test.Status.Level.Desc,
+                       "RemedialWriting" = Initial.Writing.All.Test.Status.Level.Desc,
+                       "RemedialReading" = Initial.Reading.All.Test.Status.Level.Desc, DelayEnteringCollege,
+                       "Flags" = Fall.13.Flags, "Kudos" = Fall.13.Kudo, "Referral" = Fall.13.Referral,
+                       "Attendance Concern" = Fall.13.Attendance.Concern, 
+                       "DangerofFailing" = Fall.13.In.Danger.of.Failing, 
+                       "Keep Up Good Work" = Fall.13.Keep.Up.the.Good.Work,
+                       "Lateness" = Fall.13.Lateness.Concern,
+                       "OutstandingPerformance" = Fall.13.Outstanding.Academic.Performance,
+                       "Poor Performance" = Fall.13.Poor.Class.Performance,
+                       "ShowingImprovement" = Fall.13.Showing.Improvement,
+                       "Unprepared" = Fall.13.Unprepared.for.Class,
+                       "Al" = Fall.13.AL, "CW" = Fall.13.CW, "CD" = Fall.13.CD,
+                       "MC" = Fall.13.MC, "SLC" = Fall.13.SLC, Probation)
+}
+
+Fall14.NWD <- function(x){
+        Fall14 <- Starfish%>%
+                filter(New.Student.Desc == x & 
+                               Term.Enrolled.Date == "01-SEP-2014"&
+                               Full.Part.Time.Desc == "FULL-TIME")%>%
+                mutate(Probation = ifelse(GPA.Semester.Perf > 2,1,0))%>%
+                select(New.Student.Desc, "TimeStatus" = Full.Part.Time.Desc, Age, 
+                       "Gender" = Gender.Desc,
+                       "Ethnicity" = Ethnicity.Imputed.Group.1.Desc, 
+                       "EcoDisadvantage" = Economic.Disadvantage.Flag, 
+                       "LimitedEnglish" = Limited.English.Flag,  
+                       "Major" = College.Program.Code,
+                       "Credits Enrolled" = Credits.Hours.Semester.Undergraduate.Level.Courses.Show.SUM,
+                       "Remedial Math" = Initial.Math.All.Test.Status.Level.Desc,
+                       "RemedialWriting" = Initial.Writing.All.Test.Status.Level.Desc,
+                       "RemedialReading" = Initial.Reading.All.Test.Status.Level.Desc, DelayEnteringCollege,
+                       "Flags" = Fall.14.Flags, "Kudos" = Fall.14.Kudo, "Referral" = Fall.14.Referral,
+                       "Attendance Concern" = Fall.14.Attendance.Concern, 
+                       "DangerofFailing" = Fall.14.In.Danger.of.Failing, 
+                       "Keep Up Good Work" = Fall.14.Keep.Up.the.Good.Work,
+                       "Lateness" = Fall.14.Lateness.Concern,
+                       "OutstandingPerformance" = Fall.14.Outstanding.Academic.Performance,
+                       "Poor Performance" = Fall.14.Poor.Class.Performance,
+                       "ShowingImprovement" = Fall.14.Showing.Improvement,
+                       "Unprepared" = Fall.14.Unprepared.for.Class,
+                       "Al" = Fall.14.AL, "CW" = Fall.14.CW, "CD" = Fall.14.CD,
+                       "MC" = Fall.14.MC, "SLC" = Fall.14.SLC, Probation)
+}
+
+
+
+
+Fall13FTF <- Fall13.NWD("First-time Freshmen")
+Fall14FTF <- Fall14.NWD("First-time Freshmen")
+
+FirstTimeFullTime <- rbind(Fall13FTF, Fall14FTF)
+
+summary(FirstTimeFullTime$Probation)
+
+FirstTimeFullTime <- FirstTimeFullTime[!is.na(FirstTimeFullTime$Probation),]
+
+set.seed(1)
+
+inTraining <- createDataPartition(FirstTimeFullTime$Probation, p = .7, list = FALSE)
+training <- FirstTimeFullTime[ inTraining,]
+testing  <- FirstTimeFullTime[-inTraining,]
+
+```
+
+
+```{r, message=FALSE, results='hide'}
+
+
+ModelFTF <- glm(Probation ~ LimitedEnglish + `Credits Enrolled` +
+                        DelayEnteringCollege +
+                        RemedialWriting + 
+                        `Remedial Math` +
+                        `Attendance Concern` + DangerofFailing + `Poor Performance` + Unprepared +
+                        `Keep Up Good Work` +
+                        OutstandingPerformance + ShowingImprovement +
+                        Al + CW,
+                data = training,
+                family = "binomial")
+
+ModelFTFNoEas <- glm(Probation ~ LimitedEnglish + `Credits Enrolled` +
+                        DelayEnteringCollege +
+                        RemedialWriting + 
+                        `Remedial Math`,
+                data = training,
+                family = "binomial")
+
+
+
+train <- training
+test <- testing
+
+feature.names <- names(train)[2:ncol(train)-1]
+
+dtrain <- xgb.DMatrix(data = data.matrix(train[,feature.names]), label=train$Probation)
+dtest <- xgb.DMatrix(data = data.matrix(test[,feature.names]), label=test$Probation)
+
+watchlist <- list(train=dtrain, test=dtest)
+
+set.seed(1337)
+
+bst <- xgb.train(data=dtrain, 
+                 params = list(max_depth         = 3,  # maximum depth of tree 
+                               eta              = 0.01,      # step size shrinkage 
+                               gamma             = 0,      # minimum loss reduction 
+                               subsample         = .9, # part of data instances to grow tree 
+                               colsample_bytree  = .5,
+                               min_child_weight  = 0),
+                 nround=1500, 
+                 watchlist=watchlist, 
+                 objective = "binary:logistic",
+                 eval_metric = "auc")
+
+importance_matrix <- xgb.importance(feature.names, model = bst)
+
+importance_matrixR1 <- importance_matrix[1:10, ]
+
+xgb.plot.importance(importance_matrixR1) +theme(text = element_text(size=20)) +
+        theme(axis.text.y=element_text(colour="black"))
+
+
+testing$Probationxgboost <- predict(bst, data.matrix(testing[feature.names]))
+predxgboost <- prediction(testing$Probationxgboost, testing$Probation)
+perfxgboost <- performance(predxgboost,"tpr","fpr")
+auc(testing$Probation, testing$Probationxgboost)
+
+testing$ProbationLogit <- predict(ModelFTF, testing, type = "response")
+
+predlogit <- prediction(testing$ProbationLogit, testing$Probation)
+perflogit <- performance(predlogit,"tpr","fpr")
+auc(testing$Probation, testing$ProbationLogit)
+
+testing$ProbationLogitnoeas <- predict(ModelFTFNoEas, testing, type = "response")
+
+predlogitNoEAS <- prediction(testing$ProbationLogitnoeas, testing$Probation)
+perflogitNoEAS <- performance(predlogitNoEAS,"tpr","fpr")
+auc(testing$Probation, testing$ProbationLogitnoeas)
+
+```
+
+
+
+```{r, echo=FALSE, results='asis'}
+stargazer(ModelFTFNoEas, ModelFTF, type = "html")
+
+plot(perflogit, main="Academic Probation Model Performance", col = "#E69F00", lwd = 3.5)
+lines(unlist(perflogitNoEAS@x.values), unlist(perflogitNoEAS@y.values), col = "#66CC99", lwd = 3.5)
+lines(unlist(perfxgboost@x.values), unlist(perfxgboost@y.values), col = "#5E5EA2", lwd = 3.5)
+abline(a=0, b=1, lwd = 3.5, col="#999999")
+legend(x=.4,y=.3, c("Boosted Trees (AUC=.783)", "Logistic (AUC=.760)", "Without EAS (AUC=.608)", "Random (AUC=.5)"),
+       lwd=c(3.5,3.5,3.5,3.5),col=c("#5E5EA2", "#E69F00", "#66CC99", "#999999"))
+```
