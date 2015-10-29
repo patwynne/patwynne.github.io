@@ -1,5 +1,5 @@
 ---
-title: "Predictin Academic Probation"
+title: "Predicting Academic Probation"
 author: "Patrick Wynne"
 published: true
 status: publish
