@@ -7,9 +7,7 @@ status: publish
 draft: false
 tags: R Persistence
 ---
- 
- 
-## Early Alert and Predictive Analytics
+
 ### by Patrick Wynne and Elisabeth Lackner
 
 
