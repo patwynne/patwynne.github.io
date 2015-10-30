@@ -9,7 +9,7 @@ tags: R Persistence
  
  
 ## Early Alert and Predictive Analytics
-#by Patrick Wynne and Elisabeth Lackner
+### by Patrick Wynne and Elisabeth Lackner
 
 
 The following is the R code used to create the models and tables in the predictive analytics portion of our presentation Early Alert and Predictive Analytics at the 2015 National Symposium on Student Retention.
