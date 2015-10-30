@@ -1,5 +1,6 @@
 ---
 title: "Early Alert and Predictive Analytics"
+layout: post
 author: "Patrick Wynne and Elisabeth Lackner"
 published: true
 status: publish
