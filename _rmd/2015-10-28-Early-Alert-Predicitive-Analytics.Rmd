@@ -1,6 +1,6 @@
 ---
-title: "Predictin Academic Probation"
-author: "Patrick Wynne"
+title: "Early Alert and Predictive Analytics"
+author: "Patrick Wynne and Elisabeth Lackner"
 published: false
 status: process
 draft: false
@@ -8,6 +8,7 @@ tags: R Persistence
 ---
 
 
+The following is the R code used to create the models and tables in the predictive analytics portion of our presentation Early Alert and Predictive Analytics at the 2015 National Symposium on Student Retention.
 
 ```{r, message=FALSE, results='hide', echo=FALSE}
 setwd("C:\\Users\\PWynne\\Desktop\\Starfish Fall 15\\AtRisk")
@@ -194,5 +195,9 @@ lines(unlist(perfxgboost@x.values), unlist(perfxgboost@y.values), col = "#5E5EA2
 abline(a=0, b=1, lwd = 3.5, col="#999999")
 legend(x=.4,y=.3, c("Boosted Trees (AUC=.783)", "Logistic (AUC=.760)", "Without EAS (AUC=.608)", "Random (AUC=.5)"),
        lwd=c(3.5,3.5,3.5,3.5),col=c("#5E5EA2", "#E69F00", "#66CC99", "#999999"))
+```
+
+```{r, echo=FALSE, results='asis'}
+sessionInfo()
 ```
 
