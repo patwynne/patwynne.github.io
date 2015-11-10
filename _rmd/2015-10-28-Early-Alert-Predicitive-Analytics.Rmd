@@ -1,7 +1,7 @@
 ---
 title: "Early Alert and Predictive Analytics"
 author: "Patrick Wynne and Elisabeth Lackner"
-published: false
+published: true
 status: process
 draft: false
 tags: R Persistence
