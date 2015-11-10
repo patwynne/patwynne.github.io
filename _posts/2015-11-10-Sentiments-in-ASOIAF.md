@@ -1,5 +1,5 @@
 ---
-title: "Early Alert and Predictive Analytics"
+title: "Sentiments in ASOIAF"
 author: "Patrick Wynne"
 date: "November 10, 2015"
 published: true
