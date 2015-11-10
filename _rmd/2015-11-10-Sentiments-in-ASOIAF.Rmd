@@ -1,5 +1,5 @@
 ---
-title: "Early Alert and Predictive Analytics"
+title: "Sentiments in ASOIAF"
 author: "Patrick Wynne"
 date: "November 10, 2015"
 published: false
@@ -11,7 +11,7 @@ tags: Text Mining
 
 
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE, results='markup'}
+```{r, message=FALSE, warning=FALSE, results='markup'}
 
 library(dplyr)
 library(tidyr)
