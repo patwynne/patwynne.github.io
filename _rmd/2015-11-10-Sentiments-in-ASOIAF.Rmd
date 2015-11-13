@@ -39,13 +39,13 @@ FFC <- source_DropboxData(file = "A-Feast-for-Crows-George-R.-R.-Martin_1.csv",
 DWD <- source_DropboxData(file = "A-Dance-With-Dragons-George-RR-Martin_1.csv", 
                                     key = "789sbl95faxcvnj", header = F)
 
-#create function to clean text files
+#create function to clean text files and perform sentiment analysis
 CleanAndSentiment <- function(arg1, x){
         arg2 <- arg1[arg1$V1 != "",] #remove empty rows
         arg2 <- arg2[-(1:ifelse(is.na(which(arg2=="Prologue")[2]),which(arg2=="Prologue"),which(arg2=="Prologue")[2]))] #start file at prologue
         arg2 <- arg2[1:ifelse((which(arg2=="Appendix")<1000),length(arg2),which(arg2=="Appendix"))] #end file at Appendix
         arg3 <- arg2%>%
-                get_nrc_sentiment(.)%>% #counts frequencies on 8 emotions
+                get_nrc_sentiment(.)%>% #counts sentiments
                 t(.)%>%
                 data.frame(.)%>%
                 rowSums(.)%>%
