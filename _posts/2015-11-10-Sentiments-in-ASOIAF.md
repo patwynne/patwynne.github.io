@@ -22,6 +22,8 @@ library(knitr)
 library(ggplot2)
 library(syuzhet)
  
+#import files from dropbox
+ 
 GOT <- source_DropboxData(file = "A-Game-Of-Thrones-George-R.-R.-Martin.csv", 
                               key = "kogv0pl0oz2f5bq", header = F)
  
@@ -37,13 +39,13 @@ FFC <- source_DropboxData(file = "A-Feast-for-Crows-George-R.-R.-Martin_1.csv",
 DWD <- source_DropboxData(file = "A-Dance-With-Dragons-George-RR-Martin_1.csv", 
                                     key = "789sbl95faxcvnj", header = F)
  
- 
+#create function to clean text files
 CleanAndSentiment <- function(arg1, x){
         arg2 <- arg1[arg1$V1 != "",] #remove empty rows
         arg2 <- arg2[-(1:ifelse(is.na(which(arg2=="Prologue")[2]),which(arg2=="Prologue"),which(arg2=="Prologue")[2]))] #start file at prologue
         arg2 <- arg2[1:ifelse((which(arg2=="Appendix")<1000),length(arg2),which(arg2=="Appendix"))] #end file at Appendix
         arg3 <- arg2%>%
-                get_nrc_sentiment(.)%>%
+                get_nrc_sentiment(.)%>% #counts frequencies on 8 emotions
                 t(.)%>%
                 data.frame(.)%>%
                 rowSums(.)%>%
@@ -57,6 +59,8 @@ CleanAndSentiment <- function(arg1, x){
                        Book = x)
         return(arg4)
 }
+ 
+#run function on five ASOIAF books
  
 GOTSentiment <- CleanAndSentiment(GOT, "Game of Thrones")
  
@@ -81,7 +85,7 @@ ASOIAF$sentiment <- factor(ASOIAF$sentiment,levels = c("trust", "fear", "anticip
                                                                        "joy", "anger", "surprise", "negative", "positive"))
  
  
- 
+#Plot the proportion of the 8 emotions across the 5 books in the series thus far
 ggplot(ASOIAF,aes(x=Book, y=Percent, color=sentiment, group = sentiment)) + 
         geom_line(aes(group = sentiment),size = 1) + geom_point() + ggtitle("Sentiments in ASOIAF") + 
         theme(text = element_text(size=14), legend.text = element_text(size = 14),
