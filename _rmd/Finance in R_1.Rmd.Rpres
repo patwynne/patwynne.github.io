@@ -1,0 +1,43 @@
+Finance in R
+========================================================
+title: "Finance in R"
+author: "Patrick Wynne"
+date: "April 1, 2016"
+autosize: true
+
+First Slide
+========================================================
+
+```{r, message=FALSE, warning=FALSE, results='markup'}
+
+library(dplyr)
+library(tidyr)
+library(repmis)
+library(stargazer)
+library(knitr)
+library(ggplot2)
+
+#import files from dropbox
+
+Data <- source_DropboxData(file = "FinanceExample.csv", 
+                              key = "x61awpr4vqvi97y", header = TRUE)
+
+```
+
+Slide With Code
+========================================================
+
+```{r, message=FALSE, warning=FALSE, results='markup'}
+
+library(DescTools)
+
+Desc(Data$JPM)
+
+```
+
+Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```

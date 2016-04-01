@@ -1,0 +1,153 @@
+---
+title: "Finance in R"
+author: "Patrick Wynne"
+layout: post
+date: "April 1, 2016"
+published: false
+status: process
+draft: false
+output:
+  slidy_presentation:
+    keep_md: true
+---
+
+##Loading packages and importing data
+
+```{r, message=FALSE, warning=FALSE, results='markup'}
+
+library(dplyr)
+library(tidyr)
+library(repmis)
+library(stargazer)
+library(knitr)
+library(ggplot2)
+
+#import files from dropbox
+
+Data <- source_DropboxData(file = "FinanceExample.csv", 
+                              key = "x61awpr4vqvi97y", header = TRUE)
+
+```
+
+## JP Morgan {.smaller}
+
+```{r, message=FALSE, warning=FALSE, results='markup'}
+
+library(DescTools)
+
+Desc(Data$JPM, plotit = TRUE)
+
+```
+
+
+##Morgan Stanley {.smaller}
+
+```{r, message=FALSE, warning=FALSE, results='markup'}
+
+Desc(Data$MS, plotit = TRUE)
+
+```
+
+##Goldman Sachs {.smaller}
+
+```{r, message=FALSE, warning=FALSE, results='markup'}
+
+Desc(Data$GS, plotit = TRUE)
+
+```
+
+
+##S&P {.smaller}
+
+
+```{r, message=FALSE, warning=FALSE, results='markup'}
+
+Desc(Data$`S&P`, plotit = TRUE)
+
+```
+
+##Correlation Matrix
+
+```{r, message=FALSE, warning=FALSE, results='asis'}
+
+CorrelationMatrix <- cor(Data[2:5])
+
+stargazer(CorrelationMatrix, type = "html")
+
+```
+
+##Simple Regression JPM
+
+```{r, message=FALSE, warning=FALSE, results='asis'}
+
+JPM_SimpleRegression <- lm(JPM-rf ~ `S&P-rf`, data = Data)
+
+stargazer(JPM_SimpleRegression, type = "html", title = "JPM Versus S&P-rf")
+
+```
+
+
+##Simple Regression MS
+
+```{r, message=FALSE, warning=FALSE, results='asis'}
+
+MS_SimpleRegression <- lm(MS-rf ~ `S&P-rf`, data = Data)
+
+stargazer(MS_SimpleRegression, type = "html", title = "MS Versus S&P-rf")
+
+```
+
+
+
+##Simple Regression GS
+
+```{r, message=FALSE, warning=FALSE, results='asis'}
+
+GS_SimpleRegression <- lm(GS-rf ~ `S&P-rf`, data = Data)
+
+stargazer(GS_SimpleRegression, type = "html", title = "GS Versus S&P-rf")
+
+```
+
+
+##Multiple Regression JPM
+
+```{r, message=FALSE, warning=FALSE, results='asis'}
+
+JPM_MultipleRegression <- lm(JPM-rf  ~ mktrf + smb + hml, data = Data)
+
+stargazer(JPM_MultipleRegression, type = "html", title = "Multiple Regression on JPM")
+
+```
+
+
+##Multiple Regression MS
+
+```{r, message=FALSE, warning=FALSE, results='asis'}
+
+MS_MultipleRegression <- lm(MS-rf ~ mktrf + smb + hml, data = Data)
+
+stargazer(MS_MultipleRegression, type = "html", title = "Multiple Regression on MS")
+
+```
+
+
+##Multiple Regression GS
+
+```{r, message=FALSE, warning=FALSE, results='asis'}
+
+GS_MultipleRegression <- lm(GS-rf ~ mktrf + smb + hml, data = Data)
+
+stargazer(GS_MultipleRegression, type = "html", title = "Multiple Regression on GS")
+
+
+```
+
+
+
+
+
+
+
+
+
