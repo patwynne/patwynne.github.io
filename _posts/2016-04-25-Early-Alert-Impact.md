@@ -11,11 +11,11 @@ output: html_document
 tags: Text Mining
 ---
 
-###Early-Alert Impact on Course Outcomes  
+### Early-Alert Impact on Course Outcomes  
 
 **Abstract -- A large urban open-admission community college invested in a campus-wide early-alert and student support system to enable timely and efficient communication between faculty, student support personnel, and students to address academic problems early in the semester and to provide resources such as tutoring. This paper seeks to measure the early alert systems impact on student outcomes in credit bearing courses.**
 
-####Introduction
+#### Introduction
 In response to demands to increase access to higher education some 50 years ago, municipalities at the state and local levels founded 2-year colleges across the nation, which now total 1,132 colleges in all.  Growth in this sector of higher education has been so great that community college students now make up 40% of all enrolled students in higher education  ().  
 
 
@@ -35,7 +35,7 @@ In this study I use college enrollment data from Fall 2010 to the Spring 2015 to
 
 
 
-####Methods
+#### Methods
 
 A key obstacle in my evaluation is that Starfish usage is not randomly selected. The main use of Starfish is to identify struggling students. It follows logically that course sections implementing the EAS will, on average, have worse course outcomes than sections not implementing the EAS.  
 
@@ -49,7 +49,7 @@ In order to determine the difference pre implementation, I impute the likelihood
 To control student effects, I look at only those students who were enrolled in treatment (EAS sections) and control (non-EAS sections) pre and post implementation. To further control for student effects, I include fixed effects for students. To control for professor characteristics, I also include fixed effects for professors. 
 The resulting model looks like:  
 
-$Y_{ij} = \alpha + \alpha_{1}*Treat_{i} + \alpha_{2}*Post_{i} + \theta(Treat_{i}*Post_{i}) + \beta*X_{i} + Z_{j} + \epsilon_{ij}$ 
+$ Y_{ij} = \alpha + \alpha_{1}*Treat_{i} + \alpha_{2}*Post_{i} + \theta(Treat_{i}*Post_{i}) + \beta*X_{i} + Z_{j} + \epsilon_{ij} $ 
 
 where PostEAS is a dummy variable indicating 0 for pre EAS implementation and 1 for Post EAS implementation. Treamtent is a dummy variable where 0 indicates non-EAS section and 1 indicates a section that used at least one tracking item or we impute would have used a tracking item. Delta(StudentEffects) is the fixed effects for students. Delta(Professor) is the fixed effects for Professors. Beta(X) represents all other exogenous variables we are controlling for. 
 
