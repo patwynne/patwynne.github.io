@@ -49,7 +49,7 @@ In order to determine the difference pre implementation, I impute the likelihood
 To control student effects, I look at only those students who were enrolled in treatment (EAS sections) and control (non-EAS sections) pre and post implementation. To further control for student effects, I include fixed effects for students. To control for professor characteristics, I also include fixed effects for professors. 
 The resulting model looks like:  
 
-$ Y_{ij} = \alpha + \alpha_{1}*Treat_{i} + \alpha_{2}*Post_{i} + \theta(Treat_{i}*Post_{i}) + \beta*X_{i} + Z_{j} + \epsilon_{ij} $ 
+$$ Y_{ij} = \alpha + \alpha_{1}*Treat_{i} + \alpha_{2}*Post_{i} + \theta(Treat_{i}*Post_{i}) + \beta*X_{i} + Z_{j} + \epsilon_{ij} $$ 
 
 where PostEAS is a dummy variable indicating 0 for pre EAS implementation and 1 for Post EAS implementation. Treamtent is a dummy variable where 0 indicates non-EAS section and 1 indicates a section that used at least one tracking item or we impute would have used a tracking item. Delta(StudentEffects) is the fixed effects for students. Delta(Professor) is the fixed effects for Professors. Beta(X) represents all other exogenous variables we are controlling for. 
 
