@@ -24,4 +24,4 @@ One quick note I had was where Gaston suggested added the lines
 
 to the ```page.html``` file in the ```_layouts``` folder, I instead had to add it to my ```meta.html```  in my  ```_includes``` file. I'm not sure if that's specific to how my repository is composed or if it's due to different markdown engines. Either way happy to writing beautiful math equations in the blog.
 
-$$\mathsf{Y_{ij}} = \mathsf{\alpha} + \mathsf{\alpha_{1}} + \mathsf{\alpha_{2}}+ \theta(Treat_{i}*Post_{i}) + \beta*X_{i} + Z_{j} + \epsilon_{ij}$$ 
+$$Y_{ij} = \alpha + \alpha_{1}*Treat_{i} + \alpha_{2}*Post_{i} + \theta(Treat_{i}*Post_{i}) + \beta*X_{i} + Z_{j} + \epsilon_{ij}$$ 
