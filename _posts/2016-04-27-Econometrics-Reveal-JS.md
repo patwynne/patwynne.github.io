@@ -40,7 +40,7 @@ stargazer(Data, type = "html")
 ## JP Morgan
 
 
-<table style="text-align:center"><tr><td colspan="6" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Statistic</td><td>N</td><td>Mean</td><td>St. Dev.</td><td>Min</td><td>Max</td></tr>
+<table class="reveal"><tr><td colspan="6" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Statistic</td><td>N</td><td>Mean</td><td>St. Dev.</td><td>Min</td><td>Max</td></tr>
 <tr><td colspan="6" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">date</td><td>60</td><td>20,130,680.000</td><td>14,265.690</td><td>20,110,131</td><td>20,151,231</td></tr>
 <tr><td style="text-align:left">JPM</td><td>60</td><td>0.012</td><td>0.075</td><td>-0.229</td><td>0.172</td></tr>
 <tr><td style="text-align:left">MS</td><td>60</td><td>0.009</td><td>0.100</td><td>-0.228</td><td>0.309</td></tr>
