@@ -1,3 +1,27 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/Lato.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url(fonts/LatoBold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: url(fonts/LatoItalic.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: url(fonts/LatoBoldItalic.ttf) format('truetype');
+}
 /**
  * League theme for reveal.js.
  *
@@ -5,8 +29,14 @@
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
-@import url(../../lib/font/league-gothic/league-gothic.css);
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
+@font-face {
+  font-family: 'League Gothic';
+  src: url("../../lib/font/league-gothic/league-gothic.eot");
+  src: url("../../lib/font/league-gothic/league-gothic.eot?#iefix") format("embedded-opentype"), url("../../lib/font/league-gothic/league-gothic.woff") format("woff"), url("../../lib/font/league-gothic/league-gothic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
@@ -188,8 +218,7 @@ body {
 .reveal table td[align="right"] {
   text-align: right; }
 
-.reveal table tbody tr:last-child th,
-.reveal table tbody tr:last-child td {
+.reveal table tr:last-child td {
   border-bottom: none; }
 
 .reveal sup {
@@ -213,9 +242,9 @@ body {
 .reveal a {
   color: #13DAEC;
   text-decoration: none;
-  -webkit-transition: color .15s ease;
-  -moz-transition: color .15s ease;
-  transition: color .15s ease; }
+  -webkit-transition: color 0.15s ease;
+  -moz-transition: color 0.15s ease;
+  transition: color 0.15s ease; }
 
 .reveal a:hover {
   color: #71e9f4;
@@ -240,9 +269,9 @@ body {
   box-shadow: none; }
 
 .reveal a img {
-  -webkit-transition: all .15s linear;
-  -moz-transition: all .15s linear;
-  transition: all .15s linear; }
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  transition: all 0.15s linear; }
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
