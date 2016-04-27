@@ -8,6 +8,8 @@ output:
                 theme: solarized
 ---
 
+<section>
+
 ## Loading packages and importing data
 
 
@@ -25,6 +27,9 @@ Data <- source_DropboxData(file = "FinanceExample.csv",
                               key = "x61awpr4vqvi97y", header = TRUE)
 ```
 
+</section>
+
+<section>
 
 ## JP Morgan
 
@@ -35,11 +40,14 @@ library(stargazer)
 stargazer(Data, type = "html")
 ```
 
+</section>
+
+<section>
 
 ## JP Morgan
 
 
-<table style="text-align:center"><tr><td colspan="6" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Statistic</td><td>N</td><td>Mean</td><td>St. Dev.</td><td>Min</td><td>Max</td></tr>
+<table  class="reveal" style="text-align:center"><tr><td colspan="6" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Statistic</td><td>N</td><td>Mean</td><td>St. Dev.</td><td>Min</td><td>Max</td></tr>
 <tr><td colspan="6" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">date</td><td>60</td><td>20,130,680.000</td><td>14,265.690</td><td>20,110,131</td><td>20,151,231</td></tr>
 <tr><td style="text-align:left">JPM</td><td>60</td><td>0.012</td><td>0.075</td><td>-0.229</td><td>0.172</td></tr>
 <tr><td style="text-align:left">MS</td><td>60</td><td>0.009</td><td>0.100</td><td>-0.228</td><td>0.309</td></tr>
@@ -54,3 +62,5 @@ stargazer(Data, type = "html")
 <tr><td style="text-align:left">GS-rf</td><td>60</td><td>0.005</td><td>0.077</td><td>-0.186</td><td>0.233</td></tr>
 <tr><td style="text-align:left">S&P-rf</td><td>60</td><td>0.009</td><td>0.034</td><td>-0.072</td><td>0.108</td></tr>
 <tr><td colspan="6" style="border-bottom: 1px solid black"></td></tr></table>
+
+</section>
