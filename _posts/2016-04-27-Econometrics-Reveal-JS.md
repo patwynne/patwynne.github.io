@@ -6,7 +6,7 @@ date: "April 27, 2016"
 theme: league
 transition: slide
 ---
-<section data-markdown>
+<section>
 ## Loading packages and importing data
 
 
@@ -24,7 +24,8 @@ Data <- source_DropboxData(file = "FinanceExample.csv",
                               key = "x61awpr4vqvi97y", header = TRUE)
 ```
 </section>
-<section data-markdown>
+
+<section>
 ## JP Morgan
 
 
@@ -34,7 +35,8 @@ library(stargazer)
 stargazer(Data, type = "html")
 ```
 </section>
-<section data-markdown>
+
+<section>
 ## JP Morgan
 
 
@@ -53,4 +55,5 @@ stargazer(Data, type = "html")
 <tr><td style="text-align:left">GS-rf</td><td>60</td><td>0.005</td><td>0.077</td><td>-0.186</td><td>0.233</td></tr>
 <tr><td style="text-align:left">S&P-rf</td><td>60</td><td>0.009</td><td>0.034</td><td>-0.072</td><td>0.108</td></tr>
 <tr><td colspan="6" style="border-bottom: 1px solid black"></td></tr></table>
+
 </section>
