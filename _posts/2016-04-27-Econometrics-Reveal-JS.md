@@ -3,7 +3,8 @@ title: "Econometric Examples in R"
 author: "Patrick Wynne"
 layout: slide
 date: "April 27, 2016"
-output: revealjs::revealjs_presentation
+theme: league
+transition: slide
 ---
 
 ## Loading packages and importing data
