@@ -8,10 +8,6 @@ output: html_document
 tags: Data Mining
 ---
 
-# Student Attrition Modelling Using XGBoost
-Patrick Wynne  
-April 30, 2016  
-
 ## Introduction
 
 In this post I will briefly outline how I am currently using XGBoost. In this post I will start with a data frame names SpringSemesters. Each row in the data set represent a student enrolled in either the spring 14 or spring 15 semesters. The data frame initially has 141 columns and little more than 26884 rows. 
