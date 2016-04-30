@@ -8,9 +8,7 @@ output: html_document
 tags: Data Mining
 ---
 
-## Introduction
-
-In this post I will briefly outline how I am currently using XGBoost. In this post I will start with a data frame names SpringSemesters. Each row in the data set represent a student enrolled in either the spring 14 or spring 15 semesters. The data frame initially has 141 columns and little more than 26884 rows. 
+In this post I will briefly outline how I am currently using XGBoost. In this post I will start with a data frame names SpringSemesters. Each row in the data set represent a student enrolled in either the spring 14 or spring 15 semesters. The data set has 26884 rows and 141 columns. 
 
 
 
