@@ -4,14 +4,9 @@ author: "Patrick Wynne"
 layout: post
 date: "April 24, 2016"
 output: html_document
-published: true
-status: publish
-draft: false
-output: html_document
-tags: Text Mining
 ---
 
-Gaston Sanchez was a short [blog post](http://gastonsanchez.com/opinion/2014/02/16/Mathjax-with-jekyll/) outlining how to get started writing LaTeX-like math equations in your jekyll blog. 
+Gaston Sanchez wrote an excellent [blog post](http://gastonsanchez.com/opinion/2014/02/16/Mathjax-with-jekyll/) outlining how to get started writing LaTeX-like math equations in your jekyll blog. 
 
 One quick note I had was where Gaston suggested added the lines 
 
