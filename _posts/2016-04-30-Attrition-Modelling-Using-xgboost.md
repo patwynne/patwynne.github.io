@@ -150,10 +150,10 @@ The above is our Receiver Operator Characteristic Curve. The x axis is the false
 # Create a new variable to determine what probability cut off a student belongs to
 
 FinalTest$`Probabilty Cut-Off`[FinalTest$RetPrediction < .4] <- 40
-FinalTest$`Probabilty Cut-Off`[FinalTest$RetPrediction < .45&
+FinalTest$`Probabilty Cut-Off`[FinalTest$RetPrediction < .45 &
                                  FinalTest$RetPrediction >= .4] <- 45
 FinalTest$`Probabilty Cut-Off`[FinalTest$RetPrediction < .5&
-                                   testing$RetPrediction >= .45] <- 50
+                                   FinalTest$RetPrediction >= .45] <- 50
 FinalTest$`Probabilty Cut-Off`[FinalTest$RetPrediction < .55 &
                                  FinalTest$RetPrediction >= .5] <- 55
 FinalTest$`Probabilty Cut-Off`[FinalTest$RetPrediction < .6 &
@@ -169,10 +169,10 @@ FinalTest$`Probabilty Cut-Off`[FinalTest$RetPrediction < .80 &
 FinalTest$`Probabilty Cut-Off`[FinalTest$RetPrediction < .85&
                                  FinalTest$RetPrediction >= .8] <- 85
 FinalTest$`Probabilty Cut-Off`[FinalTest$RetPrediction < .9 &
-                                 testing$RetPrediction >= .85] <- 90
+                                 FinalTest$RetPrediction >= .85] <- 90
 FinalTest$`Probabilty Cut-Off`[FinalTest$RetPrediction < .95 &
                                    FinalTest$RetPrediction >= .9] <- 95
-FinalTest$`Probabilty Cut-Off`[FinalTest$RetPrediction < 1 &
+FinalTest$`Probabilty Cut-Off`[FinalTest$RetPrediction <= 1 &
                                  FinalTest$RetPrediction >= .95] <- 100
 
 
@@ -205,16 +205,17 @@ stargazer::stargazer(FinalTestAUCTable, summary = FALSE, type = "html", rownames
 <tr><td colspan="8" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Probabilty Cut-Off</td><td>Total Selected</td><td>Drop Outs Selected</td><td>Accuracy Rate (% Correct)</td><td>Non-Drop Outs Selected</td><td>Drop Outs not Selected</td><td>Sensitivity Rate</td><td>False Positive Rate</td></tr>
 <tr><td colspan="8" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">40</td><td>421</td><td>281</td><td>66.75</td><td>140</td><td>867</td><td>24.48</td><td>4.85</td></tr>
 <tr><td style="text-align:left">45</td><td>590</td><td>385</td><td>65.25</td><td>205</td><td>763</td><td>33.54</td><td>7.11</td></tr>
-<tr><td style="text-align:left">55</td><td>805</td><td>468</td><td>58.14</td><td>337</td><td>680</td><td>40.77</td><td>11.69</td></tr>
-<tr><td style="text-align:left">60</td><td>1057</td><td>560</td><td>52.98</td><td>497</td><td>588</td><td>48.78</td><td>17.23</td></tr>
-<tr><td style="text-align:left">65</td><td>1371</td><td>653</td><td>47.63</td><td>718</td><td>495</td><td>56.88</td><td>24.9</td></tr>
-<tr><td style="text-align:left">70</td><td>1759</td><td>758</td><td>43.09</td><td>1001</td><td>390</td><td>66.03</td><td>34.71</td></tr>
-<tr><td style="text-align:left">75</td><td>2149</td><td>840</td><td>39.09</td><td>1309</td><td>308</td><td>73.17</td><td>45.39</td></tr>
-<tr><td style="text-align:left">80</td><td>2590</td><td>931</td><td>35.95</td><td>1659</td><td>217</td><td>81.1</td><td>57.52</td></tr>
-<tr><td style="text-align:left">85</td><td>3115</td><td>1004</td><td>32.23</td><td>2111</td><td>144</td><td>87.46</td><td>73.2</td></tr>
-<tr><td style="text-align:left">95</td><td>3336</td><td>1016</td><td>30.46</td><td>2320</td><td>132</td><td>88.5</td><td>80.44</td></tr>
-<tr><td style="text-align:left">100</td><td>3354</td><td>1017</td><td>30.32</td><td>2337</td><td>131</td><td>88.59</td><td>81.03</td></tr>
-<tr><td style="text-align:left">NA</td><td>4032</td><td>1148</td><td>28.47</td><td>2884</td><td>0</td><td>100</td><td>100</td></tr>
+<tr><td style="text-align:left">50</td><td>769</td><td>466</td><td>60.6</td><td>303</td><td>682</td><td>40.59</td><td>10.51</td></tr>
+<tr><td style="text-align:left">55</td><td>984</td><td>549</td><td>55.79</td><td>435</td><td>599</td><td>47.82</td><td>15.08</td></tr>
+<tr><td style="text-align:left">60</td><td>1236</td><td>641</td><td>51.86</td><td>595</td><td>507</td><td>55.84</td><td>20.63</td></tr>
+<tr><td style="text-align:left">65</td><td>1550</td><td>734</td><td>47.35</td><td>816</td><td>414</td><td>63.94</td><td>28.29</td></tr>
+<tr><td style="text-align:left">70</td><td>1938</td><td>839</td><td>43.29</td><td>1099</td><td>309</td><td>73.08</td><td>38.11</td></tr>
+<tr><td style="text-align:left">75</td><td>2328</td><td>921</td><td>39.56</td><td>1407</td><td>227</td><td>80.23</td><td>48.79</td></tr>
+<tr><td style="text-align:left">80</td><td>2769</td><td>1012</td><td>36.55</td><td>1757</td><td>136</td><td>88.15</td><td>60.92</td></tr>
+<tr><td style="text-align:left">85</td><td>3294</td><td>1085</td><td>32.94</td><td>2209</td><td>63</td><td>94.51</td><td>76.6</td></tr>
+<tr><td style="text-align:left">90</td><td>3793</td><td>1135</td><td>29.92</td><td>2658</td><td>13</td><td>98.87</td><td>92.16</td></tr>
+<tr><td style="text-align:left">95</td><td>4014</td><td>1147</td><td>28.57</td><td>2867</td><td>1</td><td>99.91</td><td>99.41</td></tr>
+<tr><td style="text-align:left">100</td><td>4032</td><td>1148</td><td>28.47</td><td>2884</td><td>0</td><td>100</td><td>100</td></tr>
 <tr><td colspan="8" style="border-bottom: 1px solid black"></td></tr></table>
 
 Ultimately we want to identify students deemed at risk of dropping out of school, and to do so we need to determine the cut off for students at risk versus those not at risk. With that in mind, I made the above table. In the above table, we see that in our test data set, when we set the cut off at 55 (actually .55) we selected 40% of all drop outs and only 7% of returning students. In total, at the 55 cutoff, we selected 805 students of which 468 were accurately identified (did not return to school the following Fall).
