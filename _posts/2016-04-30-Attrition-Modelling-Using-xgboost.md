@@ -10,7 +10,7 @@ tags: Data Mining
 
 In this post I will briefly outline how we use XGBoost to model student attrition.
 
-I start with a data frame named SpringSemesters. Each row in the data set represents a student enrolled in either the spring 14 or spring 15 semesters. If a student was enrolled in both the spring 14 and spring 15, they will have two rows in the data set. The data set has 26884 rows and 141 columns. 
+We start with a data frame named SpringSemesters. Each row in the data set represents a student enrolled in either the spring 14 or spring 15 semesters. If a student was enrolled in both the spring 14 and spring 15, they will have two rows in the data set. The data set has 26884 rows and 141 columns. 
 
 
 # Partitioning the Data
@@ -67,7 +67,7 @@ dtest <- xgb.DMatrix(data = data.matrix(testing[,feature.names]), label=testing$
 watchlist <- list(train=dtrain, test=dtest)
 ```
 
-Xgboost requires sparse matrices as an input. This requires all character vectors to be converted to numeric values. First I create a character vector called "feature.names" that contains the column names in the data frame of all values other than the dependent variable "RetainedGraduated" (we leave RetainedGraduated out for reasons that will be explained later). Then we iterate along the feature.names vector converted every character vector to factor than integer. 
+Xgboost requires sparse matrices as an input. This requires all character vectors to be converted to numeric values. First we create a character vector called "feature.names" that contains the column names in the data frame of all values other than the dependent variable "RetainedGraduated" (we leave RetainedGraduated out for reasons that will be explained later). Then we iterate along the feature.names vector converted every character vector to factor than integer. 
 
 ## Train the boosted trees model
 
@@ -88,7 +88,7 @@ BoostedTrees <- xgb.train(data        = dtrain,
                           eval_metric = "auc")
 ```
 
-I use the set.seed function to ensure reproducibility. Then I run the xgb.train function. Adjusting the various parameters can improve model performance greatly, but can also lead to overfitting on your test set. I created two test sets initially so that I can tune the paramters of the xgb.train to improve the models performance on the initial test set. Once I'm satisfied with the model performance, I give a final test to my cleverly named "FinalTest" data frame.
+We use the set.seed function to ensure reproducibility. Then we run the xgb.train function. Adjusting the various parameters can improve model performance greatly, but can also lead to overfitting on your test set. We created two test sets initially so that we can tune the paramters of the xgb.train to improve the models performance on the initial test set. Once we're satisfied with the model performance, we give a final test to my cleverly named "FinalTest" data frame.
 
 
 ## Create importance 
@@ -124,7 +124,7 @@ auc(FinalTest$RetainedGraduated, FinalTest$RetPrediction)
 ## Area under the curve: 0.7455
 ```
 
-Here he determine the area under the ROC curve using the auc function in the pROC package. As can be seen above, the model had an auc of .745.
+Here we determine the area under the ROC curve using the auc function in the pROC package. As can be seen above, the model had an auc of .745.
 
 ## ROC Curve
 
