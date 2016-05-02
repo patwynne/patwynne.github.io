@@ -37,7 +37,7 @@ testing <- testingSets[ PartitionTesting,]
 FinalTest  <- testingSets[-PartitionTesting,]
 ```
 
-In the above code block, I partition the data into three disinct data frames. First I use the set.seed function to ensure that my results are reproducible. Then I need use the createDataPartition function from the caret package to create a random index of 70% of the rows in my SpringSemesters data frame. I then assign the indexed subset to a data frame named training. I assign the complementary rows to a data frame named testingSets. I then repeat this process to create two evenly sized testing data sets.
+In the above code block, we partition the data into three disinct data frames. First we use the set.seed function to ensure that my results are reproducible. Then we need use the createDataPartition function from the caret package to create a random index of 70% of the rows in my SpringSemesters data frame. We then assign the indexed subset to a data frame named training. We assign the complementary rows to a data frame named testingSets. We then repeat this process to create two evenly sized testing data sets.
 
 ## Creating Sparse Matrices
 
