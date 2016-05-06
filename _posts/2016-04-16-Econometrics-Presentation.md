@@ -1,5 +1,5 @@
 ---
-title: "Creating Revealjs slides with Rmarkdown"
+title: "Econometric Slides with Revealjs and Rmarkdown"
 author: "Patrick Wynne"
 layout: post
 date: "April 24, 2016"
