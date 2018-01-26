@@ -4,8 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I am a research analyst in the institutional research department at Queensborough Community College as well as a grad student in the data analytics program at Queens College. 
-
+I am an institutional research specialist at Queensborough Community College. I am interested in R, statistics, and data visualization.
 
 ### Contact me
 
