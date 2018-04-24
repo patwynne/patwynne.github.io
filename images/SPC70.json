@@ -1,14 +1,4 @@
 {
-  "semester": [
-    "Fall 14",
-    "Fall 15",
-    "Fall 16",
-    "Fall 17"
-  ],
-  "enrollment": [
-    550,
-    808,
-    1209,
-    149
-  ]
+  "semester": ["Fall 14", "Fall 15", "Fall 16", "Fall 17"],
+  "enrollment": [550, 808, 1209, 149]
 }
