@@ -1,0 +1,20 @@
+{
+  "SPC70":[
+    {
+    "semester" :"Fall 14",
+    "enrollment":550
+  },
+  {
+    "semester" :"Fall 15",
+    "enrollment":808
+  },
+  {
+    "semester" :"Fall 16",
+    "enrollment":1209
+  },
+  {
+    "semester" :"Fall 17",
+    "enrollment":1459
+  },
+]
+}
