@@ -1,0 +1,18 @@
+{
+  "Freshmen":{
+    "semester":["Fall 14", "Fall 15", "Fall 16", "Fall 17"],
+    "enrollment":[216, 178, 240, 230]
+  },
+  "Transfers":{
+    "semester":["Fall 14", "Fall 15", "Fall 16", "Fall 17"],
+    "enrollment":[84, 84, 78, 83]
+  },
+  "Continuing/Nondegree":{
+    "semester":["Fall 14", "Fall 15", "Fall 16", "Fall 17"],
+    "enrollment":[591, 560, 722, 735]
+  },
+  "All Students":{
+    "semester":["Fall 14", "Fall 15", "Fall 16", "Fall 17"],
+    "enrollment":[891, 822, 1040, 1048]
+  }
+}
