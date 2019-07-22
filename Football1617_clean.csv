@@ -1,0 +1,126 @@
+institution_name,state_cd,Sports,AY,TOTAL_EXPENSE_ALL,Rank,Conference
+The University of Alabama,AL,Football,16-17,62.252,1,SEC
+Florida State University,FL,Football,16-17,48.33,2,ACC
+University of Michigan-Ann Arbor,MI,Football,16-17,46.25,3,BIG TEN
+Clemson University,SC,Football,16-17,43.944,4,ACC
+The University of Texas at Austin,TX,Football,16-17,43.307,5,BIG 12
+Auburn University,AL,Football,16-17,42.825,6,SEC
+Pennsylvania State University-Main Campus,PA,Football,16-17,39.164,7,BIG TEN
+Ohio State University-Main Campus,OH,Football,16-17,38.446,8,BIG TEN
+University of Oklahoma-Norman Campus,OK,Football,16-17,37.848,9,BIG 12
+University of Washington-Seattle Campus,WA,Football,16-17,37.661,10,PAC 12
+University of Arkansas,AR,Football,16-17,37.326,11,SEC
+University of Nebraska-Lincoln,NE,Football,16-17,36.572,12,BIG TEN
+University of Georgia,GA,Football,16-17,36.388,13,SEC
+Texas Christian University,TX,Football,16-17,35.717,14,BIG 12
+University of South Carolina-Columbia,SC,Football,16-17,34.795,15,SEC
+University of Florida,FL,Football,16-17,33.692,16,SEC
+Baylor University,TX,Football,16-17,33.371,17,BIG 12
+University of Notre Dame,IN,Football,16-17,33.258,18,Independent
+University of Wisconsin-Madison,WI,Football,16-17,33.147,19,BIG TEN
+University of Miami,FL,Football,16-17,33.019,20,ACC
+The University of Tennessee-Knoxville,TN,Football,16-17,32.6,21,SEC
+University of Iowa,IA,Football,16-17,31.801,22,BIG TEN
+Arizona State University-Tempe,AZ,Football,16-17,31.371,23,PAC 12
+Texas A & M University-College Station,TX,Football,16-17,31.078,24,SEC
+University of Minnesota-Twin Cities,MN,Football,16-17,30.95,25,BIG TEN
+University of Mississippi,MS,Football,16-17,30.41,26,SEC
+University of Southern California,CA,Football,16-17,30.185,27,PAC 12
+Louisiana State University and Agricultural & Mechanical College,LA,Football,16-17,30.087,28,SEC
+University of Oregon,OR,Football,16-17,28.912,29,PAC 12
+University of Pittsburgh-Pittsburgh Campus,PA,Football,16-17,27.421,30,ACC
+University of California-Los Angeles,CA,Football,16-17,27.321,31,PAC 12
+Northwestern University,IL,Football,16-17,26.752,32,BIG TEN
+Purdue University-Main Campus,IN,Football,16-17,26.68,33,BIG TEN
+Michigan State University,MI,Football,16-17,26.326,34,BIG TEN
+Indiana University-Bloomington,IN,Football,16-17,25.673,35,BIG TEN
+University of Kentucky,KY,Football,16-17,25.59,36,SEC
+Rutgers University-New Brunswick,NJ,Football,16-17,25.424,37,BIG TEN
+University of Louisville,KY,Football,16-17,25.195,38,ACC
+Virginia Polytechnic Institute and State University,VA,Football,16-17,24.996,39,ACC
+Stanford University,CA,Football,16-17,24.606,40,PAC 12
+Duke University,NC,Football,16-17,24.492,41,ACC
+University of Utah,UT,Football,16-17,24.484,42,PAC 12
+Vanderbilt University,TN,Football,16-17,23.316,43,SEC
+Boston College,MA,Football,16-17,23.104,44,ACC
+Mississippi State University,MS,Football,16-17,23.07,45,SEC
+University of California-Berkeley,CA,Football,16-17,22.91,46,PAC 12
+Georgia Institute of Technology-Main Campus,GA,Football,16-17,22.35,47,ACC
+University of Illinois at Urbana-Champaign,IL,Football,16-17,22.332,48,BIG TEN
+University of Colorado Boulder,CO,Football,16-17,22.126,49,PAC 12
+Syracuse University,NY,Football,16-17,22.039,50,ACC
+University of North Carolina at Chapel Hill,NC,Football,16-17,21.671,51,ACC
+Texas Tech University,TX,Football,16-17,21.46,52,BIG 12
+University of Arizona,AZ,Football,16-17,21.139,53,PAC 12
+University of Virginia-Main Campus,VA,Football,16-17,21.136,54,ACC
+University of Missouri-Columbia,MO,Football,16-17,21.094,55,SEC
+North Carolina State University at Raleigh,NC,Football,16-17,20.866,56,ACC
+Temple University,PA,Football,16-17,20.624,57,AAC
+University of Connecticut,CT,Football,16-17,20.455,58,AAC
+West Virginia University,WV,Football,16-17,20.122,59,BIG 12
+Kansas State University,KS,Football,16-17,19.889,60,BIG 12
+Oklahoma State University-Main Campus,OK,Football,16-17,19.321,61,BIG 12
+Brigham Young University-Provo,UT,Football,16-17,19.253,62,Independent
+Iowa State University,IA,Football,16-17,19.177,63,BIG 12
+Washington State University,WA,Football,16-17,19.054,64,PAC 12
+University of Maryland-College Park,MD,Football,16-17,18.909,65,BIG TEN
+Wake Forest University,NC,Football,16-17,18.88,66,ACC
+Southern Methodist University,TX,Football,16-17,17.638,67,AAC
+University of Central Florida,FL,Football,16-17,17.065,68,AAC
+University of Kansas,KS,Football,16-17,17.062,69,BIG 12
+Oregon State University,OR,Football,16-17,16.354,70,PAC 12
+University of Cincinnati-Main Campus,OH,Football,16-17,15.492,71,AAC
+Colorado State University-Fort Collins,CO,Football,16-17,15.444,72,Mountain West
+University of Tulsa,OK,Football,16-17,15.146,73,AAC
+University of Memphis,TN,Football,16-17,14.713,74,AAC
+University of Houston,TX,Football,16-17,14.642,75,AAC
+San Diego State University,CA,Football,16-17,14.635,76,Mountain West
+Tulane University of Louisiana,LA,Football,16-17,13.368,77,AAC
+California State University-Fresno,CA,Football,16-17,13.22,78,Mountain West
+University of South Florida-Main Campus,FL,Football,16-17,12.657,79,AAC
+Rice University,TX,Football,16-17,12.001,80,C-USA
+University of Hawaii at Manoa,HI,Football,16-17,11.812,81,Mountain West
+University of New Mexico-Main Campus,NM,Football,16-17,11.779,82,Mountain West
+Florida International University,FL,Football,16-17,11.397,83,C-USA
+Boise State University,ID,Football,16-17,11.141,84,Mountain West
+The University of Texas at San Antonio,TX,Football,16-17,10.616,85,C-USA
+East Carolina University,NC,Football,16-17,10.592,86,AAC
+Middle Tennessee State University,TN,Football,16-17,10.541,87,C-USA
+University of Massachusetts-Amherst,MA,Football,16-17,10.457,88,MAC
+University of Wyoming,WY,Football,16-17,10.398,89,Mountain West
+Old Dominion University,VA,Football,16-17,10.392,90,C-USA
+Ohio University-Main Campus,OH,Football,16-17,10.135,91,MAC
+University of Toledo,OH,Football,16-17,10.047,93,MAC
+University of North Texas,TX,Football,16-17,9.917,94,C-USA
+University of Nevada-Las Vegas,NV,Football,16-17,9.806,95,Mountain West
+The University of Texas at El Paso,TX,Football,16-17,9.7,96,C-USA
+Miami University-Oxford,OH,Football,16-17,9.346,97,MAC
+University of South Alabama,AL,Football,16-17,9.313,98,Sun Belt
+University of Nevada-Reno,NV,Football,16-17,9.284,99,Mountain West
+Eastern Michigan University,MI,Football,16-17,9.034,100,MAC
+Utah State University,UT,Football,16-17,8.982,101,Mountain West
+Western Kentucky University,KY,Football,16-17,8.914,102,C-USA
+Marshall University,WV,Football,16-17,8.905,103,C-USA
+Western Michigan University,MI,Football,16-17,8.667,104,MAC
+University of Louisiana at Lafayette,LA,Football,16-17,8.45,105,Sun Belt
+Troy University,AL,Football,16-17,8.442,106,Sun Belt
+Louisiana Tech University,LA,Football,16-17,8.285,107,C-USA
+San Jose State University,CA,Football,16-17,8.228,108,Mountain West
+University of North Carolina at Charlotte,NC,Football,16-17,8.183,109,Independent
+Northern Illinois University,IL,Football,16-17,8.035,110,MAC
+Georgia State University,GA,Football,16-17,7.955,111,Sun Belt
+Appalachian State University,NC,Football,16-17,7.923,113,Sun Belt
+Florida Atlantic University,FL,Football,16-17,7.915,114,C-USA
+University at Buffalo,NY,Football,16-17,7.796,115,MAC
+University of Akron Main Campus,OH,Football,16-17,7.254,117,MAC
+Central Michigan University,MI,Football,16-17,7.233,118,MAC
+Arkansas State University-Main Campus,AR,Football,16-17,7.159,119,Sun Belt
+University of Idaho,ID,Football,16-17,7.07,120,Sun Belt
+University of Southern Mississippi,MS,Football,16-17,7.048,122,C-USA
+Ball State University,IN,Football,16-17,7.045,123,MAC
+Texas State University,TX,Football,16-17,6.952,124,Sun Belt
+Kent State University at Kent,OH,Football,16-17,6.862,125,MAC
+Bowling Green State University-Main Campus,OH,Football,16-17,6.537,131,MAC
+New Mexico State University-Main Campus,NM,Football,16-17,6.185,133,Sun Belt
+Georgia Southern University,GA,Football,16-17,6.139,135,Sun Belt
+University of Louisiana at Monroe,LA,Football,16-17,5.395,141,Sun Belt
